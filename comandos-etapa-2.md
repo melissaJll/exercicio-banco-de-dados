@@ -79,12 +79,16 @@ UPDATE cursos SET professor_id = 1 WHERE id = 5;
 -- Dados inseridos Alunos
 
 INSERT INTO alunos(nome, dataNascimento, primeiraNota, segundaNota, curso_id) VALUES
-('Ana', '20060201', 8.9, 8.0, 1),
+('Ana', '20090201', 8.9, 8.0, 1),
 ('Roberto','20060415',6, 3.5, 1);
 
+UPDATE alunos SET dataNascimento = '20090201' WHERE id = 1;
+
+
 INSERT INTO alunos(nome, dataNascimento, primeiraNota, segundaNota, curso_id) VALUES
-('Mariana', '2005-02-01', 9, 8.5, 2),
+('Mariana', '2010-02-01', 9, 8.5, 2),
 ('Yasmin','2006-02-09',4, 4.5, 2);
+
 
 UPDATE alunos SET primeiraNota = 7.00 WHERE id = 3;
 
@@ -96,7 +100,9 @@ UPDATE alunos SET dataNascimento = '2006-10-19' WHERE id = 5;
 
 INSERT INTO alunos(nome, dataNascimento, primeiraNota, segundaNota, curso_id) VALUES
 ('Lucas', '2008-04-11', 5.55, 4.75, 4),
-('João','2006-08-03', 6.0, 3.0, 4);
+('João','2009-08-03', 6.0, 3.0, 4);
+
+
 
 INSERT INTO alunos(nome, dataNascimento, primeiraNota, segundaNota, curso_id) VALUES
 ('Thomas', '2008-05-25', 9 , 9.25, 5),
