@@ -85,15 +85,21 @@ INSERT INTO alunos(nome, dataNascimento, primeiraNota, segundaNota, curso_id) VA
 ('Mariana', '2005-02-01', 9, 8.5, 2),
 ('Yasmin','2006-02-09',4, 4.5, 2);
 
+UPDATE alunos SET primeiraNota = 7.00 WHERE id = 3;
+
 INSERT INTO alunos(nome, dataNascimento, primeiraNota, segundaNota, curso_id) VALUES
 ('Fernanda', '2006-05-19', 10, 8.75, 3),
 ('Felipe','2007-07-21', 8, 9, 3);
+
+UPDATE alunos SET dataNascimento = '2006-10-19' WHERE id = 5;
 
 INSERT INTO alunos(nome, dataNascimento, primeiraNota, segundaNota, curso_id) VALUES
 ('Lucas', '2008-04-11', 5.55, 4.75, 4),
 ('João','2006-08-03', 6.0, 3.0, 4);
 
 INSERT INTO alunos(nome, dataNascimento, primeiraNota, segundaNota, curso_id) VALUES
-('thomas', '2008-05-25', 9 , 9.25, 5),
+('Thomas', '2008-05-25', 9 , 9.25, 5),
 ('Debora','2006-04-08', 8.75, 5.25, 5);
+
+UPDATE alunos SET primeiraNota = 7.25 WHERE id = 9;
 ```
