@@ -39,13 +39,14 @@ ALTER TABLE professores
 	REFERENCES cursos(id);
 
 
--- Mudança de tipo de dado de VARCHAR para ENUM
+        -- Mudança de tipo de dado de VARCHAR para ENUM
 ALTER TABLE professores 
     MODIFY COLUMN areaAtuacao ENUM('design', 'desenvolvimento', 'infra') NOT NULL;
     
 ALTER TABLE alunos
     ADD CONSTRAINT fk_alunos_cursos FOREIGN KEY (curso_id)
 	REFERENCES cursos(id);
+
 
 
 -- Dados inseridos Cursos e Professores
@@ -75,7 +76,7 @@ UPDATE cursos SET professor_id = 2 WHERE id = 4;
 UPDATE cursos SET professor_id = 1 WHERE id = 5;
 
 
--- Dados inseridos
+-- Dados inseridos Alunos
 
 INSERT INTO alunos(nome, dataNascimento, primeiraNota, segundaNota, curso_id) VALUES
 ('Ana', '20060201', 8.9, 8.0, 1),
