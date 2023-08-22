@@ -108,5 +108,8 @@ INSERT INTO alunos(nome, dataNascimento, primeiraNota, segundaNota, curso_id) VA
 ('Thomas', '2008-05-25', 9 , 9.25, 5),
 ('Debora','2006-04-08', 8.75, 5.25, 5);
 
+INSERT INTO alunos(nome, dataNascimento, primeiraNota, segundaNota, curso_id) VALUES
+('Mike', '2010-05-25', 9 , 10, 3);
+
 UPDATE alunos SET primeiraNota = 7.25 WHERE id = 9;
 ```
