@@ -67,10 +67,11 @@ INNER JOIN cursos
 ```sql
 SELECT professores.nome Nome, cursos.titulo 'Curso Lecionado'
 FROM `professores`INNER JOIN cursos 
-	ON professores.curso_id = cursos.id;
+	ON professores.curso_id = cursos.id order by professores.nome;
 ```
 
 ![sétima consulta](/imagens/exerc07.png)
+![sétima consulta](/imagens/exerc07-2.png)
 
 ---
 
