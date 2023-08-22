@@ -80,7 +80,7 @@ FROM `professores`INNER JOIN cursos
 
 
 ```sql
-SELECT alunos.nome Aluno, professores.nome Professor, cursos.titulo 'Curso Lecionado'
+SELECT alunos.nome Aluno, cursos.titulo 'Curso', professores.nome 'Professor Responsável'
 FROM `professores`INNER JOIN cursos 
 	ON professores.curso_id = cursos.id
 INNER JOIN alunos 
