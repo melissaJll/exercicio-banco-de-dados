@@ -130,11 +130,56 @@ DELETE FROM alunos WHERE id = 11;
 
 ### 13) Faça uma consulta que mostre a lista de alunos atualizada e o título dos cursos que fazem, classificados pelo nome do aluno.
 
+```sql
 SELECT alunos.nome as Nome, cursos.titulo Curso FROM `alunos` 
 INNER JOIN cursos 
 	ON alunos.curso_id = cursos.id ORDER BY alunos.nome;
+```
 ---
 ![](/imagens/exerc13.png)
+
+## DESAFIOS
+
+1) Criar uma consulta que calcule a idade do aluno
+
+```sql
+SELECT alunos.id Id, alunos.nome Nome, FLOOR(DATEDIFF("2023-08-22", dataNascimento)/365.25) as 'Idade em anos' FROM alunos;
+```
+![segunda consulta](/imagens/desafio1.png)
+---
+
+2) Criar uma consulta que calcule a média das notas de cada aluno e mostre somente os alunos que tiveram a média **maior ou igual a 7**.
+
+```sql
+SELECT nome Nome, ROUND((primeiraNota + segundaNota)/2,2) 'Média' FROM `alunos` WHERE ROUND((primeiraNota + segundaNota)/2,2) >= 7 ;
+```
+![segunda consulta](/imagens/exerc02.png)
+![segunda consulta](/imagens/desafio2.png)
+---
+
+3) Criar uma consulta que calcule a média das notas de cada aluno e mostre somente os alunos que tiveram a média **menor que 7**.
+
+```sql
+SELECT nome Nome, ROUND((primeiraNota + segundaNota)/2,2) 'Média' FROM `alunos` WHERE ROUND((primeiraNota + segundaNota)/2,2) <= 7 ;
+```
+![segunda consulta](/imagens/exerc02.png)
+![segunda consulta](/imagens/desafio3.png)
+
+---
+
+4) Criar uma consulta que mostre a quantidade de alunos com média **maior ou igual a 7**.
+
+```sql
+SELECT COUNT(alunos.nome) as 'Quantidade de alunos' FROM `alunos` WHERE ROUND((primeiraNota + segundaNota)/2,2) >= 7 ;
+
+
+SELECT COUNT(alunos.nome) as 'Quantidade em Recuperação' FROM `alunos` WHERE ROUND((primeiraNota + segundaNota)/2,2) <= 7 ;
+
+SELECT COUNT(alunos.nome) as Total FROM `alunos`;
+
+```
+![segunda consulta](/imagens/desafio4-1.png)
+![segunda consulta](/imagens/desafio4-2.png)
 
 
 
