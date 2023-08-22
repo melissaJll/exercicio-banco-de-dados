@@ -14,7 +14,9 @@ SELECT nome Nome, dataNascimento FROM `alunos` WHERE dataNascimento < '2009-01-0
 
 ```sql
 SELECT nome Nome, ROUND((primeiraNota + segundaNota)/2,2) 'Média' FROM `alunos` GROUP BY nome;
+
 ```
+![segunda consulta](/imagens/exerc02.png)
 
 
 
@@ -26,6 +28,7 @@ SELECT nome Nome, ROUND((primeiraNota + segundaNota)/2,2) 'Média' FROM `alunos`
 SELECT titulo, cargaHoraria as 'Total de Horas' , cargaHoraria * 0.25 as 'Limite em hrs' FROM `cursos` ORDER BY titulo;
 
 ```
+![terceira consulta](/imagens/exerc03.png)
 
 
 
@@ -35,6 +38,7 @@ SELECT titulo, cargaHoraria as 'Total de Horas' , cargaHoraria * 0.25 as 'Limite
 ```sql
 SELECT nome 'Nome', areaAtuacao 'Área de atuação' FROM `professores` WHERE areaAtuacao = 'desenvolvimento';
 ```
+![quarta consulta](/imagens/exerc04.png)
 
 
 
@@ -45,6 +49,7 @@ SELECT nome 'Nome', areaAtuacao 'Área de atuação' FROM `professores` WHERE ar
 
 SELECT areaAtuacao as 'Área', COUNT(id) as 'Quantidade de Professores' FROM `professores` GROUP BY areaAtuacao;
 ```
+![quinta consulta](/imagens/exerc05.png)
 
 ---
 ### 6) Faça uma consulta que mostre o nome dos alunos, o título e a carga horária dos cursos que fazem.
@@ -54,13 +59,18 @@ SELECT alunos.nome as Nome, cursos.titulo Curso, cursos.cargaHoraria as 'Carga H
 INNER JOIN cursos 
 	ON alunos.curso_id = cursos.id;
 ```
+![sexta consulta](/imagens/exerc06.png)
 
 ---
 ### 7) Faça uma consulta que mostre o nome dos professores e o título do curso que lecionam. Classifique pelo nome do professor.
 
+```sql
 SELECT professores.nome Nome, cursos.titulo 'Curso Lecionado'
 FROM `professores`INNER JOIN cursos 
 	ON professores.curso_id = cursos.id;
+```
+
+![sétima consulta](/imagens/exerc07.png)
 
 ---
 
@@ -76,6 +86,7 @@ INNER JOIN alunos
 	ON alunos.curso_id = cursos.id;
 
 ```
+![oitava consulta](/imagens/exerc08.png)
 ---
 
 ### 9) Faça uma consulta que mostre a quantidade de alunos que cada curso possui. Classifique os resultados em ordem descrecente de acordo com a quantidade de alunos.
@@ -85,7 +96,7 @@ SELECT cursos.titulo Curso, COUNT(alunos.id) as 'Quantidade de Alunos' FROM `alu
 INNER JOIN cursos 
 	ON alunos.curso_id = cursos.id GROUP BY cursos.titulo ORDER BY COUNT(alunos.id) desc;
 ```
-
+![nona consulta](/imagens/exerc09.png)
 ---
 
 ### 10) Faça uma consulta que mostre o nome dos alunos, suas notas, médias, e o título dos cursos que fazem. Devem ser considerados somente os alunos de Front-End e Back-End. Mostre os resultados classificados pelo nome do aluno.
@@ -94,6 +105,7 @@ SELECT alunos.nome Nome, alunos.primeiraNota 'NOTA 1', alunos.segundaNota 'NOTA 
 INNER JOIN cursos 
 	ON alunos.curso_id = cursos.id WHERE titulo ='Front-End' or titulo = 'Back-End' ORDER BY alunos.nome;
 ```
+![Décima consulta](/imagens/exerc10.png)
 ---
 
 ### 11) Faça uma consulta que altere o nome do curso de Figma para Adobe XD e sua carga horária de 10 para 15.
@@ -102,7 +114,8 @@ INNER JOIN cursos
 UPDATE cursos SET titulo = 'Adobe XD' WHERE id = 4;
 UPDATE cursos SET cargaHoraria = 15 WHERE id = 4;
 ```
-
+![Décima-primeira consulta](/imagens/exerc11-1.png)
+![Décima-primeira consulta](/imagens/exerc11-2.png)
 ---
 
 ### 12) Faça uma consulta que exclua um aluno do curso de Redes de Computadores e um aluno do curso de UX/UI.
@@ -111,7 +124,8 @@ UPDATE cursos SET cargaHoraria = 15 WHERE id = 4;
 DELETE FROM alunos WHERE id = 10;
 DELETE FROM alunos WHERE id = 11;
 ```
-
+![ consulta](/imagens/exerc12-1.png)
+![ consulta](/imagens/exerc12-2.png)
 ---
 
 ### 13) Faça uma consulta que mostre a lista de alunos atualizada e o título dos cursos que fazem, classificados pelo nome do aluno.
@@ -120,6 +134,7 @@ SELECT alunos.nome as Nome, cursos.titulo Curso FROM `alunos`
 INNER JOIN cursos 
 	ON alunos.curso_id = cursos.id ORDER BY alunos.nome;
 ---
+![](/imagens/exerc13.png)
 
 
 
