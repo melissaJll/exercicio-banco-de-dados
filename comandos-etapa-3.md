@@ -160,7 +160,7 @@ SELECT nome Nome, ROUND((primeiraNota + segundaNota)/2,2) 'Média' FROM `alunos`
 3) Criar uma consulta que calcule a média das notas de cada aluno e mostre somente os alunos que tiveram a média **menor que 7**.
 
 ```sql
-SELECT nome Nome, ROUND((primeiraNota + segundaNota)/2,2) 'Média' FROM `alunos` WHERE ROUND((primeiraNota + segundaNota)/2,2) <= 7 ;
+SELECT nome Nome, ROUND((primeiraNota + segundaNota)/2,2) 'Média' FROM `alunos` WHERE ROUND((primeiraNota + segundaNota)/2,2) < 7 ;
 ```
 ![segunda consulta](/imagens/exerc02.png)
 ![segunda consulta](/imagens/desafio3.png)
