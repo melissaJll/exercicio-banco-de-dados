@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 21/08/2023 às 15:16
+-- Tempo de geração: 22/08/2023 às 15:24
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.2.4
 
@@ -43,16 +43,15 @@ CREATE TABLE `alunos` (
 --
 
 INSERT INTO `alunos` (`id`, `nome`, `dataNascimento`, `primeiraNota`, `segundaNota`, `curso_id`) VALUES
-(1, 'Ana', '2006-02-01', 9.50, 8.00, 1),
+(1, 'Ana', '2009-02-01', 9.50, 8.00, 1),
 (2, 'Roberto', '2006-04-15', 5.00, 3.50, 1),
-(3, 'Mariana', '2005-02-01', 8.00, 8.50, 2),
+(3, 'Mariana', '2010-02-01', 7.00, 8.50, 2),
 (4, 'Yasmin', '2006-02-09', 4.25, 4.50, 2),
-(5, 'Fernanda', '2006-05-19', 10.00, 8.75, 3),
+(5, 'Fernanda', '2006-10-19', 10.00, 8.75, 3),
 (6, 'Felipe', '2007-07-21', 9.75, 9.00, 3),
 (7, 'Lucas', '2008-04-11', 3.25, 4.75, 4),
-(8, 'João', '2006-08-03', 5.00, 3.00, 4),
-(9, 'Thomas', '2008-05-25', 7.00, 9.25, 5),
-(10, 'Debora', '2006-04-08', 4.00, 5.25, 5);
+(8, 'João', '2009-08-03', 5.00, 3.00, 4),
+(9, 'Thomas', '2008-05-25', 7.25, 9.25, 5);
 
 -- --------------------------------------------------------
 
@@ -75,7 +74,7 @@ INSERT INTO `cursos` (`id`, `titulo`, `cargaHoraria`, `professor_id`) VALUES
 (1, 'Front-End', 40, 5),
 (2, 'Back-End', 80, 4),
 (3, 'UX/UI Design', 30, 3),
-(4, 'Figma', 10, 2),
+(4, 'Adobe XD', 15, 2),
 (5, 'Redes de Computadores', 100, 1);
 
 -- --------------------------------------------------------
@@ -135,7 +134,7 @@ ALTER TABLE `professores`
 -- AUTO_INCREMENT de tabela `alunos`
 --
 ALTER TABLE `alunos`
-  MODIFY `id` tinyint(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` tinyint(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de tabela `cursos`
